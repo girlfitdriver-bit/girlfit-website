@@ -887,6 +887,12 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       }catch(err){}
     }
     if(window.ttq){ttq.track('SubmitForm');}
+    if(window.gtag){
+      gtag('event','generate_lead',{
+        branch: fd.get('cn') || '',
+        service: fd.get('dv') || ''
+      });
+    }
     document.getElementById('fields').style.display='none';
     document.getElementById('ok').style.display='block';
   });}
