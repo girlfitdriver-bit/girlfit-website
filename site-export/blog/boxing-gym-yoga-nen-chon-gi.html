@@ -9,6 +9,26 @@
   gtag('js', new Date());
   gtag('config', 'G-WBQSTDGLL3');
 </script>
+<script>
+(function(){
+  try{
+    if(!sessionStorage.getItem('gf_source')){
+      var params=new URLSearchParams(window.location.search);
+      var src=params.get('utm_source'), medium=params.get('utm_medium'), campaign=params.get('utm_campaign');
+      var value;
+      if(src){
+        value=src+(medium?(' / '+medium):'')+(campaign?(' ('+campaign+')'):'');
+      }else if(document.referrer){
+        try{ value=new URL(document.referrer).hostname.replace(/^www\./,''); }
+        catch(e){ value='referral'; }
+      }else{
+        value='(direct)';
+      }
+      sessionStorage.setItem('gf_source', value);
+    }
+  }catch(e){}
+})();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Boxing vs Gym vs Yoga: Nữ Nên Chọn Bộ Môn Nào? | GirlFit</title>
